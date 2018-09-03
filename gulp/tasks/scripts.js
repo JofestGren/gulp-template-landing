@@ -18,8 +18,8 @@ module.exports = function () {
   // });
 
   $.gulp.task('js:copy', function () {
-    return $.gulp.src(['./dev/static/js/*.js',
-            '!./dev/static/js/libs.min.js'])
+    return $.gulp.src(['./src/static/js/*.js',
+            '!./src/static/js/libs.min.js'])
       .pipe($.gp.sourcemaps.init())
       .pipe($.gp.babel({
           presets: ['@babel/env']
@@ -38,7 +38,7 @@ module.exports = function () {
   });
 
   $.gulp.task('json:copy', function () {
-    return $.gulp.src('./dev/static/js/data/*.json')
+    return $.gulp.src('./src/static/js/data/*.json')
       .pipe($.gulp.dest('./build/static/js/data/'))
       .pipe($.bs.reload({
           stream: true
